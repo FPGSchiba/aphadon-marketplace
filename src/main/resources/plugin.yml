@@ -1,0 +1,8 @@
+name: Aphadon-Marketplace
+version: ${project.version}
+main: ch.schiba.aphadon.marketplace
+api-version: 1.17
+prefix: aph.marketplace
+load: STARTUP
+authors: [ FPGSchiba ]
+description: A Marketplace Plungin for the Aphadon Server
