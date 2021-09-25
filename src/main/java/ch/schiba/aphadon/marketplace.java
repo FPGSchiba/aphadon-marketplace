@@ -1,5 +1,6 @@
 package ch.schiba.aphadon;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class marketplace extends JavaPlugin {
@@ -7,11 +8,32 @@ public final class marketplace extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        log("Marketplace is running.");
 
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+
+    }
+
+    public void log(String Message){
+        Bukkit.getConsoleSender().sendMessage("§a[INFO]: " + Message);
+    }
+
+    public void log(String Message, Integer Level) throws Exception {
+        if(Level > 2) {
+            throw new Exception("Level cannot be higher then 2.");
+        } else {
+            switch (Level){
+                case 0: {
+                    Bukkit.getConsoleSender().sendMessage("§a[INFO]: " + Message);
+                } case 1: {
+                    Bukkit.getConsoleSender().sendMessage("§e[WARNING]: " + Message);
+                } case 2: {
+                    Bukkit.getConsoleSender().sendMessage("§c[ERROR]: " + Message);
+                }
+            }
+        }
     }
 }
