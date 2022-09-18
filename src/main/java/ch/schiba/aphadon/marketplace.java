@@ -5,6 +5,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class marketplace extends JavaPlugin {
 
+    public static marketplace INSTANCE;
+    public static Integer ERROR = 2;
+    public  static  Integer WARNING = 1;
+    public static  Integer INFO = 0;
+
+    public marketplace(){
+        INSTANCE = this;
+    }
+
     @Override
     public void onEnable() {
         // Plugin startup logic
